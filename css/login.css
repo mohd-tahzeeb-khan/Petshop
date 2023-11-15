@@ -1,0 +1,55 @@
+*{
+    background: #5b0000;
+}
+.main{
+    width: 100%;
+    height: 97vh;
+    margin: auto;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.main .left{
+    text-align: center;
+}
+.main .left h1{
+    color: white;
+    font-size: 58px;
+    margin-top: 10%;
+}
+.center{
+    width: 50%;
+    margin: 10% auto;
+    border: 2px solid rgb(255, 0, 0);
+    background-color: rgba(251, 251, 251, 0.493);
+}
+.center form{
+    width: 50%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0);
+    
+}
+.center form h3{
+    background: rgba(255, 255, 255, 0);
+}
+.center form input{
+    background: rgb(255, 255, 255);
+}
+.center form button{
+    margin: 50px;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    background-color: rgb(74, 255, 74);
+
+}
+.main .right h1{
+    margin-top: 40%;
+    margin-left: 20%;
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: -10px;
+}
+.main .right h4{
+    color: #fff;
+    margin-left: 25%;
+}

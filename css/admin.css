@@ -1,0 +1,29 @@
+*{
+    background: #5b0000;
+}
+.main{
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+.main .top{
+    width: 50%;
+    margin: auto;
+}
+.main .top h1{
+    font-size: 58px;
+    color: #fff;
+}
+.main .left{
+    display: grid;
+    grid-row: 5rem 5rem 5rem 5rem 5rem;
+    border: 2px solid white;
+    width: 50%;
+    margin: auto;
+}
+.main .left a{
+    margin: 20px 100px;
+    text-decoration:none;
+    color: #fff;
+    padding: 10px 25px;
+    background: #ff4848;
+}
