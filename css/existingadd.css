@@ -1,7 +1,8 @@
 .main{
     width: 100%;
-    background-color: #000000a3;
-    height: 100vh;
+    background-color: #5b0000;
+    height: 90vh;
+    padding-top:50px ;
     margin: auto;
     border: 2px solid rgba(0, 0, 0, 0.524);
 }
@@ -13,9 +14,9 @@
 }
 .center{
     width: 20%;
-    margin: 5% auto;
-    border: 2px solid rgba(0, 34, 255, 0.766);
-    background-color: skyblue;
+    margin: 2% auto;
+    border: 2px solid rgb(255, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
 .center form{
     margin: 50px;
@@ -27,4 +28,12 @@
     padding: 10px 20px;
     margin: 20px;
 
+}
+.main .goback{
+    border: 2px solid #000000;
+    background: #585858;
+    color: #ffffff;
+    margin: 200px 50px;
+    padding: 10px 20px;
+    text-decoration: none;
 }
