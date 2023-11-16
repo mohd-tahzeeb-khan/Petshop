@@ -8,28 +8,36 @@ public class report extends HttpServlet{
     public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
         PrintWriter out=response.getWriter();
         Connection con;
+        String table_deisgn="<td style='border-left:2px solid #000; border-right:2px solid #000;padding:3px 5px;'>";
+        String table_close="</td>";
+        String title="Sells Report";
         try {
             Class.forName("org.sqlite.JDBC");
-            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//petshop//WEB-INF//classes//petshop.db");
+            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//PetShopSystem//WEB-INF//classes//PetsShop.db");
             Statement state=con.createStatement();
-            String query_select="SELECT * FROM sells;";
+            String query_select="SELECT * FROM report;";
         ResultSet data = state.executeQuery(query_select);
         response.setContentType("text/html");
-        out.print("<h1>Report</h1>");
+        out.print("<link rel='stylesheet' href='/report.css'>");
+        out.print("<title>" + title+ "</title>");
+        out.print("<h1 style='font-size:58px;'>Sells Report</h1>");
         out.print("<table style='border:2px solid #000; padding:3px 5px;'>");
-        out.print("<tr><th style='border:2px solid #000; padding:3px 5px;backgound-color:skyblue;'>Animal</th><th style='border:2px solid #000'>Breed</th><th style='border:2px solid #000'>Colour</th><th style='border:2px solid #000'>Count</th><th style='border:2px solid #000'>Price</th></tr>");
+        out.print("<tr><th style='border:2px solid #000; padding:3px 5px;backgound-color:skyblue;'>Pet</th><th style='border:2px solid #000'>Breed</th><th style='border:2px solid #000'>Colour</th><th style='border:2px solid #000'>Price</th><th style='border:2px solid #000'>Height</th><th style='border:2px solid #000'>Weight</th></tr>");
         while(data.next()){
-            String animal=data.getString("animal");
+            String animal=data.getString("pet");
             String breed=data.getString("breed");
             String colour=data.getString("color");
-            int count=data.getInt("count");
+            int height=data.getInt("height");
+            int weight=data.getInt("weight");
             int price=data.getInt("price");
             out.println("<tr>");
-            out.println("<td style='border:2px solid #000; padding:3px 5px;'>" + animal + "</td>");
-            out.println("<td style='border:2px solid #000; padding:3px 5px;'>" + breed + "</td>");
-            out.println("<td style='border:2px solid #000; padding:3px 5px;'>" + colour + "</td>");
-            out.println("<td style='border:2px solid #000; padding:3px 5px;'>" + count + "</td>");
-            out.println("<td style='border:2px solid #000; padding:3px 5px;'>" + price + "</td>");
+            out.println(table_deisgn + animal + table_close);
+            out.println(table_deisgn + breed  + table_close);
+            out.println(table_deisgn + colour + table_close);
+            out.println(table_deisgn + price  + table_close);
+            out.println(table_deisgn + height + table_close);
+            out.println(table_deisgn + weight + table_close);
+
             out.println("</tr>");
         }
             out.print("</table>");
