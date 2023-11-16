@@ -13,9 +13,9 @@ public class add extends HttpServlet{
         String no=request.getParameter("no");
         try {
             Class.forName("org.sqlite.JDBC");
-            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//petshop//WEB-INF//classes//petshop.db");      
-            String query_getting = "SELECT count FROM pets WHERE animal = ? AND breed = ? AND colour=?";
-            String query_update="UPDATE pets SET count = ? WHERE animal = ? AND breed=? AND colour=?";
+            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//PetShopSystem//WEB-INF//classes//PetsShop.db");      
+            String query_getting = "SELECT count FROM pets WHERE pet = ? AND breed = ? AND color=?";
+            String query_update="UPDATE pets SET count = ? WHERE pet = ? AND breed=? AND color=?";
             PreparedStatement updatestatement=con.prepareStatement(query_update);
             PreparedStatement selectingstatement = con.prepareStatement(query_getting);
             
@@ -25,6 +25,7 @@ public class add extends HttpServlet{
             ResultSet results = selectingstatement.executeQuery();
             results.next();
             int numAnimals = results.getInt("count");
+           
             results.close();
             int count=numAnimals+Integer.parseInt(no);
             updatestatement.setString(1, String.valueOf(count));

@@ -11,18 +11,21 @@ public class delete extends HttpServlet{
         String breed=request.getParameter("breed");
         String colour=request.getParameter("colour");
         try {
+            
             Class.forName("org.sqlite.JDBC");
-            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//petshop//WEB-INF//classes//petshop.db");
-            PreparedStatement ps=con.prepareStatement("delete from pets where animal=? and breed=? and colour=?;");
+            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//PetShopSystem//WEB-INF//classes//PetsShop.db");
+            PreparedStatement ps=con.prepareStatement("delete from pets where pet=? and breed=? and color=?;");
             ps.setString(1, animal);
             ps.setString(2, breed);
             ps.setString(3, colour);
             int i=ps.executeUpdate();
+           
             if(i>0){
                 out.println("Animal Deleted");
                 RequestDispatcher rd=request.getRequestDispatcher("admin");
                 rd.forward(request, response);
             }
+            
             else{
                 out.print("Something went wrong");
                 RequestDispatcher rd=request.getRequestDispatcher("delete");
