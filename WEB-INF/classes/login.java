@@ -7,7 +7,7 @@ public class login extends HttpServlet{
         PrintWriter out=response.getWriter();
         String user=request.getParameter("username");
         String pass=request.getParameter("passwords");
-        if(user.equals("kritika") && pass.equals("pass")){
+        if(user.equals("tahzeeb") && pass.equals("pass")){
             RequestDispatcher rd=request.getRequestDispatcher("admin");
             rd.forward(request, response);
         }
