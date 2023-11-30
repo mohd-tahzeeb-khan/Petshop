@@ -27,6 +27,10 @@
     <servlet-name>add</servlet-name>
     <servlet-class>add</servlet-class>
     </servlet>
+    <servlet>
+    <servlet-name>allanimal</servlet-name>
+    <servlet-class>allanimal</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
@@ -54,6 +58,10 @@
     <servlet-mapping>
         <servlet-name>add</servlet-name>
         <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>allanimal</servlet-name>
+        <url-pattern>/allanimal</url-pattern>
     </servlet-mapping>
     
     <welcome-file-list>
