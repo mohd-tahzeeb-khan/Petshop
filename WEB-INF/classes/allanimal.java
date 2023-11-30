@@ -4,7 +4,7 @@ import javax.xml.transform.Result;
 
 import java.io.*;
 import java.sql.*;
-public class report extends HttpServlet{
+public class allanimal extends HttpServlet{
     public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
         PrintWriter out=response.getWriter();
         Connection con;
