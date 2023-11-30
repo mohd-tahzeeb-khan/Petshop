@@ -15,14 +15,14 @@ public class allanimal extends HttpServlet{
             Class.forName("org.sqlite.JDBC");
             con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//PetShopSystem//WEB-INF//classes//PetsShop.db");
             Statement state=con.createStatement();
-            String query_select="SELECT * FROM report;";
+            String query_select="SELECT * FROM pets;";
         ResultSet data = state.executeQuery(query_select);
         response.setContentType("text/html");
         out.print("<link rel='stylesheet' href='/report.css'>");
         out.print("<title>" + title+ "</title>");
         out.print("<h1 style='font-size:58px;'>ALL ANIMAL</h1>");
         out.print("<table style='border:2px solid #000; padding:3px 5px;'>");
-        out.print("<tr><th style='border:2px solid #000; padding:3px 5px;backgound-color:skyblue;'>Pet</th><th style='border:2px solid #000'>Breed</th><th style='border:2px solid #000'>Colour</th><th style='border:2px solid #000'>Price</th><th style='border:2px solid #000'>Height</th><th style='border:2px solid #000'>Weight</th></tr>");
+        out.print("<tr><th style='border:2px solid #000; padding:3px 5px;backgound-color:skyblue;'>Pet</th><th style='border:2px solid #000'>Breed</th><th style='border:2px solid #000'>Colour</th><th style='border:2px solid #000'>Price</th><th style='border:2px solid #000'>Height</th><th style='border:2px solid #000'>Weight</th><th style='border:2px solid #000'>Age</th><th style='border:2px solid #000'>Count</th></tr>");
         while(data.next()){
             String animal=data.getString("pet");
             String breed=data.getString("breed");
